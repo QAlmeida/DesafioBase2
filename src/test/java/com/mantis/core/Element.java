@@ -1,7 +1,7 @@
-package core;
+package com.mantis.core;
 
 public class Element {
-	
+
 	String elUsername = "//tr[2]/td[2]/input";
 	String elPassword = "//tr[3]/td[2]/input";
 	String elLogout = "//a[7]";
@@ -32,154 +32,125 @@ public class Element {
 	String elNote = "bugnote_text";
 	String elSubmitNote = "//tr[3]/td/input";
 	String elCheckNote = "//*[@id=\"bugnotes_open\"]";
-	
+
 	public String getElPassword() {
 		return elPassword;
 	}
-
 
 	public String getElLogout() {
 		return elLogout;
 	}
 
-
 	public String getElLogin() {
 		return ElLogin;
 	}
-
 
 	public String getElVerificaUsuario() {
 		return elVerificaUsuario;
 	}
 
-
 	public String getElSelecaoProjeto() {
 		return elSelecaoProjeto;
 	}
-
 
 	public String getElNewIssue() {
 		return elNewIssue;
 	}
 
-
 	public String getElCategoria() {
 		return elCategoria;
 	}
-
 
 	public String getElReproducibility() {
 		return elReproducibility;
 	}
 
-
 	public String getElSeveraty() {
 		return elSeveraty;
 	}
-
 
 	public String getElPriority() {
 		return elPriority;
 	}
 
-
 	public String getElProfile() {
 		return elProfile;
 	}
-
 
 	public String getElSumary() {
 		return elSumary;
 	}
 
-
 	public String getElDescription() {
 		return elDescription;
 	}
-
 
 	public String getElRadio1() {
 		return elRadio1;
 	}
 
-
 	public String getElRadio2() {
 		return elRadio2;
 	}
-
 
 	public String getElReportStay() {
 		return elReportStay;
 	}
 
-
 	public String getElSubmit() {
 		return elSubmit;
 	}
-
 
 	public String getElSucesso() {
 		return elSucesso;
 	}
 
-
 	public String getElMyView() {
 		return elMyView;
 	}
-
 
 	public String getElReported() {
 		return elReported;
 	}
 
-
 	public String getElSearch() {
 		return elSearch;
 	}
-
 
 	public String getElClickIssue() {
 		return elClickIssue;
 	}
 
-
 	public String getElProjetoCheck() {
 		return elProjetoCheck;
 	}
-
 
 	public String getElReporterCheck() {
 		return elReporterCheck;
 	}
 
-
 	public String getElJumpIssue() {
 		return elJumpIssue;
 	}
-
 
 	public String getElIdIssue() {
 		return elIdIssue;
 	}
 
-
 	public String getElNote() {
 		return elNote;
 	}
-
 
 	public String getElSubmitNote() {
 		return elSubmitNote;
 	}
 
-
 	public String getElCheckNote() {
 		return elCheckNote;
 	}
-	
+
 	public String getElUsername() {
 		return elUsername;
 	}
 
 }
-

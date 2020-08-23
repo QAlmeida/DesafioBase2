@@ -1,20 +1,14 @@
-package desafioBase2;
+package com.mantis.tests;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.mantis.core.Driver;
+import com.mantis.webpages.Pages;
 
-import core.Driver;
-import pages.Page;
+public class BaseTest {
 
-public class Base {
-	
-	Page inicialPage = new Page();
+	Pages inicialPage = new Pages();
 
 	@Before
 	public void openBrowser() {
@@ -27,26 +21,26 @@ public class Base {
 	public void closeBrowser() {
 		Driver.closeBrowser();
 	}
-	
+
 	public void login() {
-		
+
 		inicialPage.Clean();
 		inicialPage.setUsername("iuri.almeida");
 		inicialPage.setPassword("bugaluga01", Keys.ENTER);
 	}
-	
+
 	public void logout() {
 		inicialPage.Logout();
 	}
-	
+
 	public void verificarUsuarioLogado() {
 		inicialPage.setVerificarUsuario("iuri.almeida");
 	}
-	
+
 	public void selecionandoProjeto() {
 		inicialPage.setProjeto("Iuri Almeida´s Project");
 	}
-	
+
 	public void reportarErro() {
 		inicialPage.newIssue();
 		inicialPage.setCategory("[All Projects] General");
@@ -60,9 +54,9 @@ public class Base {
 		inicialPage.checkReportStay();
 		inicialPage.submitReport();
 		inicialPage.submitSuccessful();
-		
+
 	}
-	
+
 	public void detailsIssue() {
 		inicialPage.myView();
 		inicialPage.reportedByMe();
@@ -70,29 +64,10 @@ public class Base {
 		inicialPage.openIssue();
 		inicialPage.checkIssue();
 	}
-	
+
 	public void adicionarNota() {
 		inicialPage.jumpToIssue("4041");
 		inicialPage.addNote("Estudando automação de testes");
 	}
-
-//	public void login() {
-//
-//		WebElement username = Driver.getDriver().findElement(By.xpath("//tr[2]/td[2]/input"));
-//		username.clear();
-//		username.sendKeys("iuri.almeida");
-//		WebElement password = Driver.getDriver().findElement(By.xpath("//tr[3]/td[2]/input"));
-//		password.clear();
-//		password.sendKeys("bugaluga01", Keys.ENTER);
-//	}
-
-//	public void logout() {
-//
-//		WebElement logout = Driver.getDriver().findElement(By.xpath("//a[7]"));
-//		logout.click();
-//		WebElement login = Driver.getDriver().findElement(By.xpath("//form/table/tbody/tr[1]/td[1]"));
-//		String sair = login.getText();
-//		Assert.assertEquals("Login", sair);
-//	}
 
 }

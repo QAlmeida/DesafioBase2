@@ -1,4 +1,4 @@
-package pages;
+package com.mantis.webpages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -6,14 +6,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import core.Driver;
-import core.Element;
+import com.mantis.core.Driver;
+import com.mantis.core.Element;
 
-public class Page  {
-	
+public class Pages {
+
 	Element element = new Element();
-
-
 
 	public void Clean() {
 		WebElement username = Driver.getDriver().findElement(By.xpath(element.getElUsername()));
@@ -118,7 +116,7 @@ public class Page  {
 
 	public void checkReportStay() {
 		if (!Driver.getDriver().findElement(By.id(element.getElReportStay())).isSelected()) {
-			
+
 			Driver.getDriver().findElement(By.id(element.getElReportStay())).click();
 		}
 	}
@@ -144,24 +142,24 @@ public class Page  {
 		view.click();
 
 	}
-	
+
 	public void reportedByMe() {
 
 		WebElement reported = Driver.getDriver().findElement(By.xpath(element.getElReported()));
 		reported.click();
 
 	}
-	
+
 	public void applyFilter(CharSequence... issue) {
 		WebElement search = Driver.getDriver().findElement(By.xpath(element.getElSearch()));
 		search.sendKeys(issue);
 	}
-	
+
 	public void openIssue() {
 		WebElement open = Driver.getDriver().findElement(By.xpath(element.getElClickIssue()));
 		open.click();
 	}
-	
+
 	public void checkIssue() {
 
 		WebElement project = Driver.getDriver().findElement(By.xpath(element.getElProjetoCheck()));
@@ -172,7 +170,7 @@ public class Page  {
 		Assert.assertTrue(relator.contains("iuri.almeida"));
 
 	}
-	
+
 	public void jumpToIssue(String issue) {
 		WebElement jump = Driver.getDriver().findElement(By.xpath(element.getElJumpIssue()));
 		jump.clear();
@@ -180,10 +178,10 @@ public class Page  {
 		jump.sendKeys(Keys.ENTER);
 		WebElement id = Driver.getDriver().findElement(By.xpath(element.getElIdIssue()));
 		String number = id.getText();
-		Assert.assertTrue(number.contains(issue));	
-		
+		Assert.assertTrue(number.contains(issue));
+
 	}
-	
+
 	public void addNote(String note) {
 		WebElement nota = Driver.getDriver().findElement(By.name(element.getElNote()));
 		nota.sendKeys(note);
@@ -192,7 +190,6 @@ public class Page  {
 		WebElement checkNote = Driver.getDriver().findElement(By.xpath(element.getElCheckNote()));
 		String escrito = checkNote.getText();
 		Assert.assertTrue(escrito.contains(note));
-		
-		
+
 	}
 }
